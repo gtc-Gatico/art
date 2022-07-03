@@ -1,0 +1,1 @@
+document.write(`<div id="hello">你好</div>`)
