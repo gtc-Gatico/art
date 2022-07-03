@@ -1,1 +1,5 @@
-document.write(`<div id="hello">你好</div>`)
+(function(){
+    let a = 1;
+    console.log(a)
+})()
+
