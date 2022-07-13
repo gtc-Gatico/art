@@ -5,4 +5,7 @@ body{
 canvas{
     width: 100vw;
     height: 100vh;
+    z-index: -9;
+    position: fixed;
+    top: 0;
 }
