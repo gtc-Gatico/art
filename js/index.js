@@ -67,11 +67,12 @@
             return value.a > 0.1
         })
     }
-
-    function draw() {
+    function clear(){
         context.fillStyle = backgroundColor;
         context.fillRect(0, 0, canvas.width, canvas.height);
         context.fill();
+    }
+    function draw() {
         for (let i = 0; i < arcList.length; i++) {
             arcList[i].draw();
         }
@@ -155,8 +156,9 @@
 
     let stopFlag = requestAnimationFrame(function () {
         update();
-        draw();
+        clear()
         drawDangFlag()
+        draw();
         stopFlag = requestAnimationFrame(arguments.callee);
     })
 
