@@ -7,53 +7,55 @@
     <title>Hello</title>
 </head>
 <style>
-    body{
+    body {
         display: flex;
         justify-content: center;
     }
+
     #box1 {
         width: 1300px;
         align-items: center;
         font: 800 60px "微软雅黑";
         font-size: 500%;
-        background: url("img/fire.gif") -40px ;
+        background: url("img/fire.gif") -40px;
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
         /*animation: bg 1s linear 0s infinite;*/
     }
+
     @keyframes bg {
-        0%{
+        0% {
             background: linear-gradient(to bottom, pink 0%, transparent 10%);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
         }
-        20%{
+        20% {
             background: linear-gradient(to bottom, pink 10%, transparent 20%);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
         }
-        40%{
+        40% {
             background: linear-gradient(to bottom, pink 30%, transparent 40%);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
         }
-        60%{
+        60% {
             background: linear-gradient(to bottom, pink 50%, transparent 60%);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
         }
-        80%{
+        80% {
             background: linear-gradient(to bottom, pink 70%, transparent 80%);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
         }
-        100%{
+        100% {
             background: linear-gradient(to bottom, pink 90%, transparent 100%);
             background-clip: text;
             -webkit-background-clip: text;
@@ -70,12 +72,12 @@
         let startTime = new Date(start).getTime()
         let currentTime = new Date().getTime()
         let difference = currentTime - startTime
-        let m = (Math.floor(difference / (1000))+"").padStart(2,"0")
-        let mm = m % 60  // 秒
-        let f = (Math.floor(m / 60)+"").padStart(2,"0")
-        let ff = f % 60 // 分钟
-        let s = (Math.floor(f / 60)+"").padStart(2,"0") // 小时
-        let ss = s % 24
+        let m = Math.floor(difference / (1000))
+        let mm = ((m % 60) + "").padStart(2, "0")  // 秒
+        let f = Math.floor(m / 60)
+        let ff = ((f % 60) + "").padStart(2, "0") // 分钟
+        let s = Math.floor(f / 60) // 小时
+        let ss = ((s % 24) + "").padStart(2, "0")
         let day = Math.floor(s / 24) // 天数
         return day + "天" + ss + "时" + ff + "分" + mm + '秒'
     }
