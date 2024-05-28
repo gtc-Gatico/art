@@ -67,9 +67,14 @@
 <body>
 <div id="box1"></div>
 <script>
+    let interval;
+    let start = '2019-02-25 10:00:00'
+    let startTime = new Date(start).getTime()
+    let end = '2024-06-27 18:30:00';
+    let endTime = new Date(end).getTime()
+
     function timingTime() {
-        let start = '2019-02-25 10:00:00'
-        let startTime = new Date(start).getTime()
+
         let currentTime = new Date().getTime()
         let difference = currentTime - startTime
         let m = Math.floor(difference / (1000))
@@ -82,8 +87,11 @@
         return day + "天" + ss + "时" + ff + "分" + mm + '秒'
     }
 
-    setInterval(() => {
+    interval = setInterval(() => {
         document.getElementById('box1').innerHTML = timingTime()
+        if (new Date().getTime() - endTime >= 0) {
+            clearInterval(interval)
+        }
     }, 1000)
 </script>
 
